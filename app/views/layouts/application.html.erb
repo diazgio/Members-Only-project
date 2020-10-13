@@ -22,8 +22,10 @@
       </div>
     <% end %>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand title-c" href="#">Post Me!!!</a>
-      <button class="btn btn-light my-2 my-sm-0" type="submit">New Post</button>
+      <%= link_to root_path, class: 'navbar-brand' do%>
+        <h1 class="display-4">Post Me!</h1>
+      <% end %>
+      <%= link_to 'New Post', new_post_path, class:'btn btn-light my-2 my-sm-0' %>
     </nav>
     
     <%= yield %>
