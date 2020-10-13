@@ -1,10 +1,29 @@
+<article>
+  <figure>
+      <img src="../../assets/images/among.jpg" alt="random-image" class="rounded-circle">
+  </figure>
+</article>
+
 <% @posts.each do |post| %>
-<div>
-  <p><%= post.comment %></p>
-  <div class="d-flex">
-  <p><%= link_to 'Show', post %></p>
-  <p><%= link_to 'Edit', edit_post_path(post) %></p>
-  <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
+<div class="row">
+  <div class="col-4">
+    <img src="../../assets/images/among.jpg" alt="random-image" class="rounded-circle">
+  </div>
+  <div class="col-8">
+    <strong>Giordano Díaz</strong><br/>
+    <small>@Gior26</small><br/>
+    <p><%= post.comment %></p>
+    <div class="d-flex">
+      <%= link_to post do%>
+        <span class='icon mx-2 text-dark'><i class="fa fa-link" aria-hidden='true'></i></span>
+      <% end %>
+      <%= link_to edit_post_path(post) do%>
+        <span class='icon mx-2 text-dark'><i class='fa fa-pencil' aria-hidden='true'></i></span>
+      <% end %>
+      <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do%>
+        <span class='icon mx-2 text-dark'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
+      <% end %>
+    </div>
   </div>
 </div>
 <% end %>

@@ -1,7 +1,14 @@
 @import "bootstrap";
 
 
-.title-c {
-  color: white;
-  font-weight: bold;
+.image {
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.notificaction:not(:last-child){
+  margin-bottom: 0;
 }
