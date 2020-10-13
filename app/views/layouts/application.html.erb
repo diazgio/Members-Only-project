@@ -6,16 +6,26 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if flash[:notice] %>
-      <p class='notice'><%= notice %></p>
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <p class='toast-body'><%= notice %></p>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-      <p class='alert'><%= alert %></p>
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <p class="toast-body"><%= alert %></p>
+      </div>
     <% end %>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand title-c" href="#">Post Me!!!</a>
+      <button class="btn btn-light my-2 my-sm-0" type="submit">New Post</button>
+    </nav>
+    
     <%= yield %>
   </body>
 </html>

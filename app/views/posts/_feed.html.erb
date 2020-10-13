@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+<div>
+  <p><%= post.comment %></p>
+  <div class="d-flex">
+  <p><%= link_to 'Show', post %></p>
+  <p><%= link_to 'Edit', edit_post_path(post) %></p>
+  <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
+  </div>
+</div>
+<% end %>

@@ -26,6 +26,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'jquery-rails'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'gravatar_image_tag', '~> 1.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
