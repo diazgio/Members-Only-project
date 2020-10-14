@@ -8,9 +8,9 @@
 </article>
 
 <% @posts.each do |post| %>
-<div class="row">
+<div class="row border py-2">
   <div class="col-4">
-    <img src="../../assets/images/among.jpg" alt="random-image" class="rounded-circle">
+    <%= image_tag("among.jpg", class: "rounded-circle mt-2", width: "125", height: "125") %>
   </div>
   <div class="col-8">
     <strong>Giordano Díaz</strong><br/>
