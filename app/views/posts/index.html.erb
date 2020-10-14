@@ -1,16 +1,18 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-3">
+        <%= render 'trends' %>
       </div>
       <div class="col-6">
-        <%= render 'feed'%>
+        <%= render 'feed' %>
       </div>
-      <div class="col">
+      <div class="col-3">
+        <%= render 'posters' %>
       </div>
     </div>
   </div>
 </section>
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+

@@ -1,7 +1,10 @@
-<article>
-  <figure>
-      <img src="../../assets/images/among.jpg" alt="random-image" class="rounded-circle">
+<article class="border my-2 rounded row align-middle">
+  <figure class="col-4">
+      <%= image_tag("among.jpg", class: "rounded-circle mt-2", width: "125", height: "125") %>
   </figure>
+  <div class="col-8">
+    <%= render 'posts/form' %>
+  </div>
 </article>
 
 <% @posts.each do |post| %>
