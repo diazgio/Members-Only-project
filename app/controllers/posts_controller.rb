@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :signed_in_only!, only: [:new, :create]
 
   # GET /posts
   # GET /posts.json
@@ -71,5 +71,9 @@ class PostsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def post_params
     params.require(:post).permit(:comment)
+  end
+
+  def signed_in_only!
+    redirect_to new_user_session_path unless signed_in?
   end
 end
