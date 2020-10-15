@@ -11,6 +11,7 @@
 # Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
 
 # Use this setup block to configure all options available in SimpleForm.
+# rubocop: disable Layout/LineLength
 SimpleForm.setup do |config|
   # Default class for buttons
   config.button_class = 'btn'
@@ -429,3 +430,4 @@ SimpleForm.setup do |config|
   #   time:          :custom_multi_select
   # }
 end
+# rubocop: enable Layout/LineLength

@@ -27,6 +27,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'hirb'
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'rubocop', '~>0.81.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
