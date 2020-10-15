@@ -16,17 +16,19 @@
     <strong><%= post.user.name %></strong><br/>
     <small><%= post.user.username %></small><br/>
     <p><%= post.comment %></p>
-    <div class="d-flex">
-      <%= link_to post do%>
-        <span class='icon mx-2 text-dark'><i class="fa fa-link" aria-hidden='true'></i></span>
-      <% end %>
-      <%= link_to edit_post_path(post) do%>
-        <span class='icon mx-2 text-dark'><i class='fa fa-pencil' aria-hidden='true'></i></span>
-      <% end %>
-      <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do%>
-        <span class='icon mx-2 text-dark'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
-      <% end %>
-    </div>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+      <div class="d-flex">
+        <%= link_to post do%>
+          <span class='icon mx-2 text-dark'><i class="fa fa-link" aria-hidden='true'></i></span>
+        <% end %>
+        <%= link_to edit_post_path(post) do%>
+          <span class='icon mx-2 text-dark'><i class='fa fa-pencil' aria-hidden='true'></i></span>
+        <% end %>
+        <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do%>
+          <span class='icon mx-2 text-dark'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 <% end %>

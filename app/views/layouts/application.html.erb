@@ -12,12 +12,12 @@
 
   <body>
     <% if flash[:notice] %>
-      <div class="notificaction bg-success text-white p-4" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="notificaction bg-success text-white p-3" role="alert" aria-live="assertive" aria-atomic="true">
         <p class="m-0"><%= notice %></p>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="notificaction bg-danger text-white p-4" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="notificaction bg-danger text-white p-3" role="alert" aria-live="assertive" aria-atomic="true">
         <p class="m-0"><%= alert %></p>
       </div>
     <% end %>
@@ -27,7 +27,22 @@
       <% end %>
       <div class="d-flex justify-content-between align-items-center">
         <%= link_to 'New Post', new_post_path, class:'btn btn-light my-2 my-sm-0' %>
-        <p class="text-light m-2">Sing up</p>
+        <% if user_signed_in? %>
+          <p class="m-0">
+            <%= link_to current_user.name, edit_user_registration_path, class: 'btn text-light m-2' %>
+          </p>
+          <p class="m-0">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn text-light m-2' %>
+          </p>
+        <% else %>
+          <p class="m-0">
+            <%= link_to 'Sing In', new_user_session_path, class: 'btn text-light m-2' %>
+          </p>
+          <p class="m-0">
+            <%= link_to 'Sing Up', new_user_registration_path, class: 'btn text-light m-2' %>
+          </p>
+        <% end %>
+       
       </div>
     </nav>
     
