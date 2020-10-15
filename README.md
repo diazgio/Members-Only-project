@@ -8,7 +8,15 @@
 
 ## Concept
 
-> Build a basic app with rails to learn the basic concepts of users expirience with devise gem, and for the styles was used Bootstrap, and to get used to the rails workflow.
+> Build a basic app with rails to learn the basic concepts of users expirience with devise gem, and for the styles was used Bootstrap, It consist of making an authentication web app with users that can register, log in, log out, and alse they can create, edit and destory posts.
+
+> View without sign in your count
+
+![screenshot](./app/assets/images/logut.png)
+
+> View with your user sign in
+
+![screenshot](./app/assets/images/login.png)
 
 ## 🛠 Built With
 
@@ -46,8 +54,10 @@
         ```
         rails db:create
         rails db:migrate
-        rails server
         ```
+- before running ```rails server``` you must run a few more commands: first run ```yarn install --check-files```, ```guard init livereload```, ```rails generate simple_form:install```, 
+```rails generate devise:install``` then you can configure the Devise gem.
+- now you can run ```rails server```
 - Stop the program with: "Ctrl + C" (Windows or Linux) or "Command + C"(Apple)
 
 ### 📝 How to interact with the app?

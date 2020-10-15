@@ -10,13 +10,21 @@
 <% end %>
 
 <% @posts.each do |post| %>
-<div class="row border py-2">
-  <div class="col-4 userimg">
-    <%= gravatar_image_tag(post.user.email, size: 64, alt: post.user.name) %>
-  </div>
+<div class="row border py-2 my-2">
+  <% if user_signed_in? %>
+    <div class="col-4 userimg d-flex justify-content-center">
+      <%= gravatar_image_tag(post.user.email, size: 64, alt: post.user.name) %>
+    </div>
+  <% else %>
+    <div class="col-4 userimg d-flex justify-content-center">
+      <%= image_tag("among.jpg", class: "rounded-circle my-2", width: "80", height: "80") %>
+    </div>
+  <% end %>
   <div class="col-8">
-    <strong><%= post.user.name %></strong><br/>
-    <small><%= post.user.username %></small><br/>
+    <% if user_signed_in? %>
+      <strong><%= post.user.name %></strong><br/>
+      <small><%= post.user.username %></small><br/>
+    <% end %>
     <p><%= post.comment %></p>
     <% if user_signed_in? && current_user.id == post.user_id %>
       <div class="d-flex">
