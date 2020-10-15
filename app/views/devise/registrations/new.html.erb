@@ -9,30 +9,43 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+          <%= f.input :name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { class: "input-group" }, wrapper: false,
+                          label_html: { class: "text-light bg-dark mt-2 rounded py-1 px-2" } %>
+
+          <%= f.input :username,
+                          required: true,
+                          input_html: { class: "input-group" }, wrapper: false,
+                          label_html: { class: "text-light bg-dark mt-2 rounded py-1 px-2" } %>
+
           <%= f.input :email,
                       required: true,
                       autofocus: true,
                       input_html: { class: "input-group" },
-                      label_html: { class: 'label'} %>
+                      label_html: { class: 'text-light bg-dark mt-2 rounded py-1 px-2' } %>
 
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { class: "input-group" } %>
+                      input_html: { class: "input-group" },
+                      label_html: { class: 'text-light bg-dark rounded py-1 px-2' } %>
 
           <%= f.input :password_confirmation,
                       required: true,
-                      input_html: { class: "input-group" } %>
+                      input_html: { class: "input-group" },
+                      label_html: { class: 'text-light bg-dark rounded py-1 px-2' } %>
         </div>
 
-        <div class="form-actions btn btn-dark">
+        <div class="btn btn-dark">
           <%= f.button :submit, "Sign up", class: 'text-light' %>
         </div>
       <% end %>
       
-      <div class="btn btn-dark my-2">
-        <%= render "devise/shared/links" %>
-      </div>
+     
+      <%= render "devise/shared/links" %>
+      
     </div>
     <div class="col-3">
     </div>

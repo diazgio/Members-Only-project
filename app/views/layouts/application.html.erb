@@ -12,13 +12,13 @@
 
   <body>
     <% if flash[:notice] %>
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <p class='toast-body'><%= notice %></p>
+      <div class="notificaction bg-success text-white p-4" role="alert" aria-live="assertive" aria-atomic="true">
+        <p class="m-0"><%= notice %></p>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <p class="toast-body"><%= alert %></p>
+      <div class="notificaction bg-danger text-white p-4" role="alert" aria-live="assertive" aria-atomic="true">
+        <p class="m-0"><%= alert %></p>
       </div>
     <% end %>
     <nav class="navbar navbar-dark bg-dark">
