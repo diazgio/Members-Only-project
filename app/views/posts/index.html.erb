@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-3">
-        <%= render 'trends' %>
+        <% if user_signed_in? %>
+          <%= render 'profile' %>
+        <% else %>
+          <%= render 'trends' %>
+        <% end %>
       </div>
       <div class="col-6">
         <%= render 'feed' %>
