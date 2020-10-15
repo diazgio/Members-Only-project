@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :signed_in_only!, only: [:new, :create]
+  before_action :signed_in_only!, only: %i[new create]
 
   # GET /posts
   # GET /posts.json
