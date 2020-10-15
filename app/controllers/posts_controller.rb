@@ -5,14 +5,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order('created_at DESC')
     @post = Post.new
   end
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -20,8 +19,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts
   # POST /posts.json
@@ -64,13 +62,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:comment)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:comment)
+  end
 end
