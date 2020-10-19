@@ -27,16 +27,11 @@
     <% end %>
     <p><%= post.comment %></p>
     <% if user_signed_in? && current_user.id == post.user_id %>
-      <div class="d-flex">
-        <%= link_to post do%>
+      <div class="d-flex align-items-center">
+        <%= link_to @post do%>
           <span class='icon mx-2 text-dark'><i class="fa fa-link" aria-hidden='true'></i></span>
         <% end %>
-        <%= link_to edit_post_path(post) do%>
-          <span class='icon mx-2 text-dark'><i class='fa fa-pencil' aria-hidden='true'></i></span>
-        <% end %>
-        <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do%>
-          <span class='icon mx-2 text-dark'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
-        <% end %>
+        <%= link_to ' ', post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o icon mx-2 text-dark my-0' %>
       </div>
     <% end %>
   </div>

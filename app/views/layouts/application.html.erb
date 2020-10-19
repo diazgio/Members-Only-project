@@ -21,22 +21,7 @@
       <% end %>
       <div class="d-flex justify-content-between align-items-center">
         <%= link_to 'New Post', new_post_path, class:'btn btn-light my-2 my-sm-0' %>
-        <% if user_signed_in? %>
-          <p class="m-0">
-            <%= link_to current_user.name, edit_user_registration_path, class: 'btn text-light m-2' %>
-          </p>
-          <p class="m-0">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn text-light m-2' %>
-          </p>
-        <% else %>
-          <p class="m-0">
-            <%= link_to 'Sing In', new_user_session_path, class: 'btn text-light m-2' %>
-          </p>
-          <p class="m-0">
-            <%= link_to 'Sing Up', new_user_registration_path, class: 'btn text-light m-2' %>
-          </p>
-        <% end %>
-       
+        <%= render '/layouts/header' %>
       </div>
     </nav>
     

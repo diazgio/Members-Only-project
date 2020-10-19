@@ -8,5 +8,8 @@ module ApplicationHelper
     end
   end
   # rubocop: enable Style/HashSyntax
-end
 
+  def signed_in?
+    !current_user.nil?
+  end
+end
