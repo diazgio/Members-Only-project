@@ -1,3 +1,4 @@
+# rubocop: disable Style/HashSyntax
 module ApplicationHelper
   def flash_message
     if flash[:notice]
@@ -7,3 +8,4 @@ module ApplicationHelper
     end
   end
 end
+# rubocop: enable Style/HashSyntax
