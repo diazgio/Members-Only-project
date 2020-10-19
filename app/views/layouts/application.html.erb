@@ -11,16 +11,10 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="notificaction bg-success text-white p-3" role="alert" aria-live="assertive" aria-atomic="true">
-        <p class="m-0"><%= notice %></p>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="notificaction bg-danger text-white p-3" role="alert" aria-live="assertive" aria-atomic="true">
-        <p class="m-0"><%= alert %></p>
-      </div>
-    <% end %>
+   
+   
+    <%= flash_message %>
+
     <nav class="navbar navbar-dark bg-dark">
       <%= link_to root_path, class: 'navbar-brand' do%>
         <h1 class="my-1">POST ME!</h1>
