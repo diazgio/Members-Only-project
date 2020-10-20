@@ -1,0 +1,8 @@
+<article class="border mt-2 mb-4 rounded row align-middle shadow">
+  <figure class="col-4 userimg text-center pt-4">
+    <%= gravatar_image_tag(current_user.email, size: 80, alt: current_user.name) %>
+  </figure>
+  <div class="col-8">
+    <%= render 'posts/form' %>
+  </div>
+</article>

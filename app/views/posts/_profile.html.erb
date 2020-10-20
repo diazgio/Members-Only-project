@@ -1,0 +1,25 @@
+<div class="user text-center border mt-2 rounded shadow">
+  <div class="row">
+    <figure class="col-6 userimg">
+      <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+    </figure>
+    <div class="col-6 d-flex flex-column justify-content-center pl-0 align-items-start">
+      <strong><%= current_user.name %></strong>
+      <small><%= current_user.username %></small>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-between container m-0">
+    <div>
+      <p class="text-black-50">Posts</p>
+      <p class="text-black-50"><%= current_user.posts.count %></p>
+    </div>
+    <div>
+      <p class="text-black-50">Following</p>
+      <p class="text-black-50">123</p>
+    </div>
+    <div>
+      <p class="text-black-50">Followers</p>
+      <p class="text-black-50">432k</p>
+    </div>
+  </div>
+</div>

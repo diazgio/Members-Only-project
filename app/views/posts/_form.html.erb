@@ -1,0 +1,9 @@
+<div class="p-2">
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+      <%= f.input :comment, label: 'Post about it', input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'label' }, placeholder: 'Compose a new Post...', autofocus: true%>
+    </div>
+    <%= f.button :submit, class: 'btn btn-dark'%>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<%= formate %>
+
+<% @posts.each do |post| %>
+  <div class="row border py-2 my-2">
+    <% if user_signed_in? %>
+      <div class="col-4 userimg d-flex justify-content-center">
+        <%= gravatar_image_tag(post.user.email, size: 64, alt: post.user.name) %>
+      </div>
+    <% else %>
+      <div class="col-4 userimg d-flex justify-content-center">
+        <%= image_tag("among.jpg", class: "rounded-circle my-2", width: "80", height: "80") %>
+      </div>
+    <% end %>
+    <div class="col-8">
+      <% if user_signed_in? %>
+        <strong><%= post.user.name %></strong><br/>
+        <small><%= post.user.username %></small><br/>
+      <% end %>
+      <p><%= post.comment %></p>
+      <% if user_signed_in? && current_user.id == post.user_id %>
+        <div class="d-flex align-items-center">
+          <%= link_to @post do%>
+            <span class='icon mx-2 text-dark'><i class="fa fa-link" aria-hidden='true'></i></span>
+          <% end %>
+          <%= link_to ' ', post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash-o icon mx-2 text-dark my-0' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

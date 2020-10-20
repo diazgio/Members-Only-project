@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+
+.userimg {
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+    margin-top: .5rem;
+  }
+}
+
+.notificaction:not(:last-child){
+  margin-bottom: 0;
+}
