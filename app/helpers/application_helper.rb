@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   # rubocop: enable Style/HashSyntax
 
-  # rubocop: disable Style/RedundantInterpolation
+  # rubocop: disable Style/RedundantInterpolation, Style/LineEndConcatenation
   def signed_in?
     if user_signed_in?
       ("#{link_to current_user.name, edit_user_registration_path, class: 'btn text-light m-2'}" <<
@@ -19,7 +19,7 @@ module ApplicationHelper
        "#{link_to 'Sing Up', new_user_registration_path, class: 'btn text-light m-2'}").html_safe
     end
   end
-  # rubocop: enable Style/RedundantInterpolation
+  # rubocop: enable Style/RedundantInterpolation, Style/LineEndConcatenation
 
   def profile_col
     if user_signed_in?

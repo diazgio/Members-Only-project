@@ -5,7 +5,7 @@ module PostsHelper
       (render 'postme').html_safe
     else
       content_tag :h2, 'Sing Up to post Something',
-      :class => 'text-center border p-2 my-2 bg-light rounded border-secondary'
+                  :class => 'text-center border p-2 my-2 bg-light rounded border-secondary'
     end
   end
   # rubocop: enable Style/HashSyntax
